@@ -1,0 +1,121 @@
+// Variables
+@sanserifFont:Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+@backgroundColor: #fff;
+@copyColor:#999;
+
+
+
+
+@containerWidth: 800px;
+@swatchMargin: 10px;
+@swatchSize: @containerWidth / 4 - 10px;
+
+// mixins
+.list-reset{
+	display:block;
+	float:left;
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+
+body {
+	color: @copyColor;
+	background-color: @backgroundColor; 
+	height:100%;
+}
+div {
+	width:@containerWidth;
+	margin:auto;
+}
+h1, h2 {
+	font-family: @sanserifFont;
+	color:@copyColor;
+	background-color:@backgroundColor;
+	font-weight: bold;
+	padding:10px;
+	clear:both;
+	margin-bottom:0;
+	//.round;
+	
+
+}
+ul{
+	
+	.list-reset;
+
+	li{
+		.list-reset;
+		height:@swatchSize;
+		width:@swatchSize;
+		margin-right:@swatchMargin;
+		background-color: @col;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+div ul:first-of-type li {
+		height:@swatchSize * 2;
+		width:@swatchSize * 2;
+		margin-right:@swatchMargin * 2;
+	}
+	
+//Operations
+
+//borrowed from - http://www.stuffandnonsense.co.uk/blog/about/less
+
+@col : #001dff;			// Base colour
+
+
+@comp : spin(@col, 180);  	// Complementary colour
+
+@Col_l1 : lighten(@col, 5%);	// Lighten base
+@Col_l2 : lighten(@col, 10%);
+@Col_l3 : lighten(@col, 15%);
+@Col_l4 : lighten(@col, 20%);
+
+@Col_d1 : darken(@col, 5%);	// Darken base
+@Col_d2 : darken(@col, 10%);
+@Col_d3 : darken(@col, 15%);
+@Col_d4 : darken(@col, 20%);
+
+@Comp_l1 : lighten(@comp, 5%);	// Lighten complementary
+@Comp_l2 : lighten(@comp, 10%);
+@Comp_l3 : lighten(@comp, 15%);
+@Comp_l4 : lighten(@comp, 20%);
+
+@Comp_d1 : darken(@comp, 5%);	// Darken complementary
+@Comp_d2 : darken(@comp, 10%);
+@Comp_d3 : darken(@comp, 15%);
+@Comp_d4 : darken(@comp, 20%);
+
+
+
+//classes
+
+.less_col{background-color:@col;}	
+.less_comp{background-color:@comp;}	
+
+
+.col_l1{background-color: @Col_l1;}
+.col_l2{background-color: @Col_l2;}
+.col_l3{background-color: @Col_l3;}
+.col_l4{background-color: @Col_l4;}
+
+.col_d1{background-color: @Col_d1;}
+.col_d2{background-color: @Col_d2;}
+.col_d3{background-color: @Col_d3;}
+.col_d4{background-color: @Col_d4;}
+
+.comp_l1{background-color: @Comp_l1;}
+.comp_l2{background-color: @Comp_l2;}
+.comp_l3{background-color: @Comp_l3;}
+.comp_l4{background-color: @Comp_l4;}
+
+.comp_d1{background-color: @Comp_d1;}
+.comp_d2{background-color: @Comp_d2;}
+.comp_d3{background-color: @Comp_d3;}
+.comp_d4{background-color: @Comp_d4;}

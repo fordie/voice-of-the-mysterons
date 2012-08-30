@@ -1,0 +1,25 @@
+@containerWidth: 750px;
+@serifFont: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+@sanserifFont:Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+
+@backgroundColor: #fff;
+@copyColor:#999;
+@headingColor:#f00;
+
+body {
+	color: @copyColor;
+	background-color: @backgroundColor; 
+}
+div {
+	width:@containerWidth;
+	margin:auto;
+}
+h1, h2 {
+	font-family: @serifFont;
+	color:@headingColor;
+	font-weight: bold;
+}
+p {
+	font-family: @sanserifFont;
+	font-weight: normal;
+}
